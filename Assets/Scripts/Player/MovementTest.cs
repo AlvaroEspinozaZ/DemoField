@@ -1,11 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 public class MovementTest : MonoBehaviour
 {
-    [SerializeField] NavMeshAgent nav;
-    [SerializeField] Transform final;
     [SerializeField] Rigidbody rgb;
     [SerializeField] float impulse=1;
     Vector2 initPos; // Guarda la posición inicial del toque
@@ -13,7 +10,6 @@ public class MovementTest : MonoBehaviour
     int timer=0;
     private void Awake()
     {
-        nav = GetComponent<NavMeshAgent>();
         rgb = GetComponent<Rigidbody>();
     }
     void Start()
@@ -30,20 +26,14 @@ public class MovementTest : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            nav.enabled = false;
             //transform.position = new Vector3(transform.position.x - 5f, transform.position.y, transform.position.z);
             rgb.AddForce(Vector3.left* impulse, ForceMode.Impulse);
-            nav.enabled = true;
-            nav.SetDestination(transform.position);
 
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            nav.enabled = false;
             //transform.position = new Vector3(transform.position.x + 5f, transform.position.y, transform.position.z);
             rgb.AddForce(Vector3.left * impulse, ForceMode.Impulse);
-            nav.enabled = true;
-            nav.SetDestination(transform.position);
         }
     }
     void MoveWithTouch()
@@ -64,18 +54,14 @@ public class MovementTest : MonoBehaviour
 
                 if (direction > 0)
                 {
-                    nav.enabled = false;
                     //transform.position = new Vector3(transform.position.x + 5f, transform.position.y, transform.position.z);
                     rgb.AddForce(Vector3.left * impulse, ForceMode.Impulse);
-                    nav.enabled = true;
                     //nav.SetDestination(transform.position);
                 }
                 else if (direction < 0)
                 {
-                    nav.enabled = false;
                     //transform.position = new Vector3(transform.position.x - 5f, transform.position.y, transform.position.z);
                     rgb.AddForce(Vector3.right * impulse, ForceMode.Impulse);
-                    nav.enabled = true;
                     //nav.SetDestination(transform.position);
                 }
 
@@ -89,6 +75,12 @@ public class MovementTest : MonoBehaviour
             }
         }
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Objeto")
+        {
+            
+        }
+    }
 }
  

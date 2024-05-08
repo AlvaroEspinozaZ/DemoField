@@ -229,13 +229,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105153385}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 62.26, y: 0.4, z: -3.63}
-  m_LocalScale: {x: 2.5614, y: 5.1764, z: 2}
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 122.11, y: 0.7930214, z: 18.160189}
+  m_LocalScale: {x: 5.078112, y: 10.26249, z: 3.965107}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 3133056259348162827}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &531736103
 GameObject:
@@ -333,7 +333,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &720154226
 GameObject:
@@ -378,7 +378,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &781947940
 GameObject:
@@ -393,7 +393,6 @@ GameObject:
   - component: {fileID: 781947942}
   - component: {fileID: 781947941}
   - component: {fileID: 781947946}
-  - component: {fileID: 781947945}
   - component: {fileID: 781947947}
   m_Layer: 0
   m_Name: PlayerTest
@@ -481,28 +480,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -35.978, z: 0}
---- !u!195 &781947945
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781947940}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &781947946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,7 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100719ded42e4804db416543b890bc58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nav: {fileID: 781947945}
+  nav: {fileID: 0}
   final: {fileID: 1920722984}
   rgb: {fileID: 0}
   impulse: 60
@@ -1237,7 +1214,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3133056259348162826
 PrefabInstance:
@@ -1316,3 +1293,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f8d1f169f1de1944844fb7513943445, type: 3}
+--- !u!4 &3133056259348162827 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3976116941899439674, guid: 4f8d1f169f1de1944844fb7513943445, type: 3}
+  m_PrefabInstance: {fileID: 3133056259348162826}
+  m_PrefabAsset: {fileID: 0}
