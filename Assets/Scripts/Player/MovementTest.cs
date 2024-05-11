@@ -8,9 +8,10 @@ public class MovementTest : MonoBehaviour
     Vector2 initPos; // Guarda la posición inicial del toque
     bool touchStarted;
     int timer=0;
+    private P_BehaviursController p_BehaviursController;
     private void Awake()
     {
-        rgb = GetComponent<Rigidbody>();
+        //rgb = GetComponent<Rigidbody>();
     }
     void Start()
     {
@@ -50,19 +51,25 @@ public class MovementTest : MonoBehaviour
             }
             if (touchStarted && Input.GetTouch(0).phase == TouchPhase.Moved)
             {                
-                float direction = touch.position.x - initPos.x;
-
-                if (direction > 0)
+                float directionX = touch.position.x - initPos.x;
+                float directionY = touch.position.y - initPos.y;
+                if (directionX > 0)
                 {
                     //transform.position = new Vector3(transform.position.x + 5f, transform.position.y, transform.position.z);
                     rgb.AddForce(Vector3.left * impulse, ForceMode.Impulse);
                     //nav.SetDestination(transform.position);
+                    p_BehaviursController.DashRight();
                 }
-                else if (direction < 0)
+                else if (directionX < 0)
                 {
                     //transform.position = new Vector3(transform.position.x - 5f, transform.position.y, transform.position.z);
                     rgb.AddForce(Vector3.right * impulse, ForceMode.Impulse);
                     //nav.SetDestination(transform.position);
+                    p_BehaviursController.DashLeft();
+                }
+                else if (directionY > 0)
+                {
+                    p_BehaviursController.Jump();
                 }
 
                 touchStarted = false;
